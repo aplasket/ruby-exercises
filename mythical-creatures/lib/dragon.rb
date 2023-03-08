@@ -27,6 +27,3 @@ class Dragon
     #     end
     # end
 end
-
-# p putting this here for tracking changes
-# putting more changes here to be tracked!
