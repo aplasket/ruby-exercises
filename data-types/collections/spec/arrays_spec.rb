@@ -31,6 +31,8 @@ RSpec.describe 'Arrays' do
     nums = [1,2,3]
     actual = nums.at(2)
     # could also use nums.last
+    # could also use, nums[-1] which returns the last element in the array
+    # or nums[2]
     expected = 3
     expect(actual).to eq(expected)
 

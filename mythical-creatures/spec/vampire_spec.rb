@@ -24,7 +24,6 @@ RSpec.describe Vampire do
 
   it 'is thirsty by default' do
     vampire = Vampire.new('The Count')
-
     expect(vampire.thirsty).to be true
   end
 

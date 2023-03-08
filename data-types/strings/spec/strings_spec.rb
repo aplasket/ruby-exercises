@@ -49,6 +49,7 @@ RSpec.describe 'Strings' do
     word = "ticking"
     # In place of the line below, call a method to achieve the expected output.
     actual = word.gsub("ti", "clo")
+    # or could use .sub here
     expected = "clocking"
 
     expect(actual).to eq(expected)
@@ -95,6 +96,7 @@ RSpec.describe 'Strings' do
     rhyme = "eeny, meeny, miny, moe"
     # In place of the line below, call a method to achieve the expected output.
     actual = rhyme.delete "e"
+    # could alsoe use .gsub("e","")
     expected = "ny, mny, miny, mo"
 
     expect(actual).to eq(expected)
@@ -104,6 +106,7 @@ RSpec.describe 'Strings' do
     rhyme = "eeny, meeny, miny, moe"
     # In place of the line below, call a method to achieve the expected output.
     actual = rhyme.delete "eio"
+    # could also do .gsub(/[aeiou]/, "")
     expected = "ny, mny, mny, m"
 
     expect(actual).to eq(expected)
@@ -187,7 +190,7 @@ RSpec.describe 'Strings' do
     # See if you can use another method than the last test to achieve the same goal:
     greeting = "Hello World, my name is"
     name = "Harry Potter"
-    actual = greeting + " #{name}"
+    actual = greeting << " " << name
     expected = "Hello World, my name is Harry Potter"
 
     expect(actual).to eq(expected)
@@ -196,7 +199,7 @@ RSpec.describe 'Strings' do
   it 'test 22' do
     greeting = "Hello World, my name is"
     name = "Harry Potter"
-    actual = greeting.concat(32, name)
+    actual = greeting.concat(" ", name)
     expected = "Hello World, my name is Harry Potter"
 
     expect(actual).to eq(expected)
