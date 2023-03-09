@@ -50,7 +50,7 @@ RSpec.describe 'map pattern' do
       zip_code << "%05d" % number
     end
     
-    # Your code goes here
+    
     expect(zip_code).to eq(["00234", "00010", "09119", "38881"])
   end
 
