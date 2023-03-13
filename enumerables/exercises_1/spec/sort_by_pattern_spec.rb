@@ -77,8 +77,8 @@ RSpec.describe 'sort_by pattern' do
     prices = [3.02, 9.91, 7.9, 10.01, 11.0]
     transformed = []
     prices.each do |price|
-      
-      transformed << [("%0.02f" % price).to_s[-2,2], price]
+      transformed << [price % 1, price]
+      #alternatively: transformed << [("%0.02f" % price).to_s[-2,2], price]
     end
     transformed = transformed.sort
     sorted = []
