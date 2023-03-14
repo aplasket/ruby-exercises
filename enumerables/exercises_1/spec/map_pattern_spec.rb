@@ -46,9 +46,10 @@ RSpec.describe 'map pattern' do
     zip_code = []
     
     numbers.each do |number|
-      zip_code << "%05d" % number.to_s
+      zip_code << "%05d" % number
 
-      #alternative method; zip_code << number.to_s.rjust(5,"0")
+      #alternative method: zip_code << number.to_s.rjust(5,"0")
+      # alternative method: 
     end
     
     
