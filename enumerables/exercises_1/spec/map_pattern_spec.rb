@@ -49,7 +49,7 @@ RSpec.describe 'map pattern' do
       zip_code << "%05d" % number
 
       #alternative method: zip_code << number.to_s.rjust(5,"0")
-      # alternative method: 
+      # alternative method: zip_code << sprintf("%05d", number)
     end
     
     

@@ -41,6 +41,10 @@ RSpec.describe 'map' do
       "%05d" % number
     end
    
+    #alternative method: number.to_s.rjust(5,"0")
+    # alternative method: sprintf("%05d", number)
+
+
     expect(zip_codes).to eq(["00234", "00010", "09119", "38881"])
   end
 
