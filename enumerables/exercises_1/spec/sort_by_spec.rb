@@ -46,6 +46,7 @@ RSpec.describe 'sort_by' do
     sorted = prices.sort_by do  |price|
         price % 1
       # alternatively: ("%0.02f" % price).to_s[-2,2]
+        #alternative method: (price - price.to_i)
     end
     expect(sorted).to eq([11.0, 10.01, 3.02, 7.9, 9.91])
   end
