@@ -47,8 +47,6 @@ class Werewolf
    
 end
 
-
-
 # alternative method
 # def hungry?
 #     if @human|| @victims > 0
