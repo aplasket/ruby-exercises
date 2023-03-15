@@ -66,17 +66,18 @@ RSpec.describe Werewolf do
   end
 
   class Victim
-    attr_accessor :status
+    attr_accessor :status, :name
 
-    def initialize
+    def initialize(name)
       @status = :alive
+      @name = name
     end
    
   end
 
   it 'consumes a victim' do
     werewolf = Werewolf.new('David', 'London')
-    victim = Victim.new
+    victim = Victim.new("Sally")
     werewolf.change!
     werewolf.consumes_victims(victim)
 
@@ -89,18 +90,17 @@ RSpec.describe Werewolf do
 
   it 'cannot consume a victim if it is in human form' do
     werewolf = Werewolf.new('David', 'London')
-    victim = Victim.new
+    victim = Victim.new("Sally")
     werewolf.consumes_victims(victim)
 
     expect(werewolf.wolf?).to be false
     expect(werewolf.human?).to be true
-    # expect(werewolf.consumes_victims(victim)).to be nil
 
   end
 
   it 'a werewolf that has consumed a human being is no longer hungry' do
     werewolf = Werewolf.new('David', 'London')
-    victim = Victim.new
+    victim = Victim.new("Sally")
 
     werewolf.change!
     werewolf.consumes_victims(victim)
@@ -114,7 +114,7 @@ RSpec.describe Werewolf do
 
   it 'a werewolf who has consumed a victim makes the victim dead' do
     werewolf = Werewolf.new('David', 'London')
-    victim = Victim.new
+    victim = Victim.new("Sally")
 
     werewolf.change!
     werewolf.consumes_victims(victim)
