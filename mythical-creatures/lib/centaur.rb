@@ -13,16 +13,19 @@ class Centaur
 
  
     def cranky?
-        if @activities < 3 || @status == :slept
-           @cranky = false
-        else
-           @cranky = true
-        end
+        return @cranky = false if @activities < 3 || @status == :slept
+        return @cranky = true
+        #alternative method:
+        # if @activities < 3 || @status == :slept
+        #    @cranky = false
+        # else
+        #    @cranky = true
+        # end
      end
    
      def shoot
          @activities += 1
-         if @cranky == false && @laying == false
+         if !@cranky && !@laying
             "Twang!!!"
         else
            "NO!"  
@@ -31,7 +34,7 @@ class Centaur
      
      def run
         @activities += 1
-        if @laying == true
+        if @laying 
           "NO!"
         else 
         "Clop clop clop clop!"
@@ -47,9 +50,9 @@ class Centaur
      end
 
      def sleep
-        if @laying == true
+        if @laying
           @status = :slept
-        elsif @standing == true
+        elsif @standing
             "NO!"
         end
      end
