@@ -34,18 +34,31 @@ class Werewolf
     end
 
     def consumes_victims(victim)
-        if @human == true
-            victim.status = :alive
-        else @victims += 1
-            @wolf == true
+        if !@human 
+            @victims += 1
             @hungry = false
             victim.status = :dead
-  
+            "Yum!"
+        else
+            "Ew!!!"
 
         end
     end
 end
 # alternative method
+
+#another option for consumes_victims(victim) method
+#  def consumes_victims(victim)
+#         if @human == true
+#             victim.status = :alive
+#         else @victims += 1
+#             @wolf == true
+#             @hungry = false
+#             victim.status = :dead
+#         end
+#     end
+
+#initial way:
 # class Werewolf
 #     attr_accessor :name, :location, :human, :wolf, :hungry, :victims
     # def initialize(name, location = "London")
