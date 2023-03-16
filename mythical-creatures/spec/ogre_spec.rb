@@ -22,7 +22,7 @@ RSpec.describe Ogre do
     ogre = Ogre.new('Brak')
     human = Human.new
     expect(human.name).to eq('Jane')
-
+   
     ogre.encounter(human)
 
     expect(human.encounter_counter).to eq(1)
@@ -93,6 +93,7 @@ RSpec.describe Ogre do
     expect(human.knocked_out?).to be true
 
     ogre.apologize(human)
+  
     expect(human.knocked_out?).to be false
   end
 end
