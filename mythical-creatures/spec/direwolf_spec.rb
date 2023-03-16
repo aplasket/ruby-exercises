@@ -92,7 +92,7 @@ RSpec.describe Direwolf do
     expect(stark.house_words).to eq('Winter is Coming')
   end
 
-  it 'protects the Starks' do
+ it 'protects the Starks' do
     wolf = Direwolf.new('Nymeria', "Winterfell")
     arya_stark = Stark.new('Arya')
     sansa_stark = Stark.new('Sansa')
@@ -103,7 +103,7 @@ RSpec.describe Direwolf do
     expect(sansa_stark.safe?).to be false
   end
 
-  it 'hunts white walkers' do
+ it 'hunts white walkers' do
     wolf = Direwolf.new('Nymeria', 'Winterfell')
 
     expect(wolf.hunts_white_walkers?).to be true
@@ -126,6 +126,7 @@ RSpec.describe Direwolf do
 
     summer_wolf.protects(arya_stark)
     lady_wolf.protects(sansa_stark)
+    
     summer_wolf.leaves(arya_stark)
 
     expect(summer_wolf.starks_to_protect).to be_empty
